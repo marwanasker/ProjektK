@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Midifile: C++ MIDI file parsing library
 =======================================
 
@@ -1599,3 +1600,6 @@ is 11-against-13 for 100 cycles: `-a 11 -b 13 -c 100 -d 5 -o 11x13.mid`.
 
 
 
+=======
+# ProjektK
+>>>>>>> 43617b888ea446ddbbdc583c2400b9aec04a6c49
