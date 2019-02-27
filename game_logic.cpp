@@ -1,22 +1,19 @@
 #include <iostream>
 #include <ctime>
 #include <cmath>
-#define TSF_IMPLEMENTATION
-#include "tsf.h"
+#include "midiReader.h"
 
 using namespace std;
 
 void toggle(bool &a);
 int arrayMultiply(bool a[], bool b[]);
+void readMidiFile(int argc, char** argv, MIDI_command result[]);
 
-int main() {
-
-    tsf* soundfont = tsf_load_filename("KawaiStereoGrand.sf2");
-    //tsf_set_output(TinySoundFont, TSF_MONO, 44100, 0); //sample rate
-    //tsf_note_on(TinySoundFont, 0, 60, 1.0f); //preset 0, middle C
-    short HalfSecond[22050]; //synthesize 0.5 seconds
-    tsf_render_short(soundfont, HalfSecond, 22050, 0);
-
+int main(int argc, char** argv) {
+    int midi_length = getMidiLength(argc, argv);
+    MIDI_command* result = new MIDI_command[midi_length];
+    cout << "length is: " << midi_length << endl;
+    readMidiFile(argc, argv, result);
     int bpm = 120;
     int time_signature = 4;
     int ppq = 100;
@@ -26,11 +23,6 @@ int main() {
 
     const int DT_MARGIN = 15;
 
-    struct MIDI_command {
-      int timestamp;
-      int key;
-    } ;
-
     bool playingNotes[72]= { 0 };
     bool bonusNotes[72]= { 0 };
     bool keyboardState[72]= { 0 };
@@ -38,6 +30,10 @@ int main() {
     MIDI_command playerInput[3] = {{100, 1}, {200,1}, {220, 2}};
     MIDI_command midiFile[4] = {{100, 1}, {200,1}, {200, 2}, {300, 2}};
     MIDI_command bonusFile[4] = {{100, 1}, {110, 1}, {200, 2}, {210, 2}};
+    
+    for (int i = 0; i < midi_length; i++) {
+        cout << result[i].timestamp << " " << result[i].key << endl;
+    }
 
     clock_t start_time;
     clock_t elapsed_time;
@@ -107,3 +103,4 @@ int arrayMultiply(bool a[], bool b[]) {
     }
     return result;
 }
+
