@@ -10,12 +10,13 @@
 
 
 #endif /* midiReader_h */
-
+using namespace std;
 struct MIDI_command {
     int timestamp;
     int key;
 } ;
 
-int getMidiLength(int argc, char** argv);
-
-void readMidiFile(int argc, char** argv, MIDI_command result[]);
+class MidiReader{
+public:
+MidiReader(string fileName, int track, int argc, char** argv);
+};

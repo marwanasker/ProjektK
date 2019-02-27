@@ -7,13 +7,13 @@ using namespace std;
 
 void toggle(bool &a);
 int arrayMultiply(bool a[], bool b[]);
-void readMidiFile(int argc, char** argv, MIDI_command result[]);
 
 int main(int argc, char** argv) {
-    int midi_length = getMidiLength(argc, argv);
-    MIDI_command* result = new MIDI_command[midi_length];
-    cout << "length is: " << midi_length << endl;
-    readMidiFile(argc, argv, result);
+   // int midi_length = getMidiLength(argc, argv);
+ //   MIDI_command* result = new MIDI_command[midi_length];
+ //   cout << "length is: " << midi_length << endl;
+    MidiReader midireader =   MidiReader("twinkle.txt", 1, argc, argv);
+    
     int bpm = 120;
     int time_signature = 4;
     int ppq = 100;
@@ -31,10 +31,10 @@ int main(int argc, char** argv) {
     MIDI_command midiFile[4] = {{100, 1}, {200,1}, {200, 2}, {300, 2}};
     MIDI_command bonusFile[4] = {{100, 1}, {110, 1}, {200, 2}, {210, 2}};
     
-    for (int i = 0; i < midi_length; i++) {
+ /*   for (int i = 0; i < midi_length; i++) {
         cout << result[i].timestamp << " " << result[i].key << endl;
     }
-
+*/
     clock_t start_time;
     clock_t elapsed_time;
     int last_timestamp = 0;
