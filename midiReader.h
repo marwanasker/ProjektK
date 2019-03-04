@@ -18,5 +18,9 @@ struct MIDI_command {
 
 class MidiReader{
 public:
-MidiReader(string fileName, int track, int argc, char** argv);
+MidiReader(string fileName, int track_);
+void getMidiCommands(MIDI_command commands[]);
+int fileLength;
 };
+
+
