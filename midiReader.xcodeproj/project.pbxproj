@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		078EDE162223F87200B4EB48 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078EDE152223F87200B4EB48 /* CoreMIDI.framework */; };
+		078EDE3B2224270100B4EB48 /* MidiFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE2D2224270100B4EB48 /* MidiFile.cpp */; };
+		078EDE3C2224270100B4EB48 /* MidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE2E2224270100B4EB48 /* MidiMessage.cpp */; };
+		078EDE3D2224270100B4EB48 /* MidiEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE302224270100B4EB48 /* MidiEvent.cpp */; };
+		078EDE3E2224270100B4EB48 /* Binasc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE322224270100B4EB48 /* Binasc.cpp */; };
+		078EDE3F2224270100B4EB48 /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE342224270100B4EB48 /* Options.cpp */; };
+		078EDE402224270100B4EB48 /* MidiEventList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE352224270100B4EB48 /* MidiEventList.cpp */; };
+		078EDE46222441D700B4EB48 /* game_logic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078EDE45222441D700B4EB48 /* game_logic.cpp */; };
+		07A0DE182225467C0025762D /* midiReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DE172225467C0025762D /* midiReader.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		078EDE082223F6EF00B4EB48 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		078EDE152223F87200B4EB48 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		078EDE2D2224270100B4EB48 /* MidiFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiFile.cpp; sourceTree = "<group>"; };
+		078EDE2E2224270100B4EB48 /* MidiMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiMessage.cpp; sourceTree = "<group>"; };
+		078EDE2F2224270100B4EB48 /* Binasc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binasc.h; sourceTree = "<group>"; };
+		078EDE302224270100B4EB48 /* MidiEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiEvent.cpp; sourceTree = "<group>"; };
+		078EDE312224270100B4EB48 /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
+		078EDE322224270100B4EB48 /* Binasc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binasc.cpp; sourceTree = "<group>"; };
+		078EDE332224270100B4EB48 /* MidiFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiFile.h; sourceTree = "<group>"; };
+		078EDE342224270100B4EB48 /* Options.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Options.cpp; sourceTree = "<group>"; };
+		078EDE352224270100B4EB48 /* MidiEventList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiEventList.cpp; sourceTree = "<group>"; };
+		078EDE362224270100B4EB48 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		078EDE372224270100B4EB48 /* MidiEventList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiEventList.h; sourceTree = "<group>"; };
+		078EDE382224270100B4EB48 /* twinkle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twinkle.txt; sourceTree = "<group>"; };
+		078EDE392224270100B4EB48 /* MidiEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiEvent.h; sourceTree = "<group>"; };
+		078EDE3A2224270100B4EB48 /* MidiMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiMessage.h; sourceTree = "<group>"; };
+		078EDE44222428E800B4EB48 /* file.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = file.mid; sourceTree = "<group>"; };
+		078EDE45222441D700B4EB48 /* game_logic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_logic.cpp; sourceTree = "<group>"; };
+		07A0DE172225467C0025762D /* midiReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midiReader.cpp; sourceTree = "<group>"; };
+		07A0DE192226C2BE0025762D /* midiReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = midiReader; path = /Users/Marwanasker/Desktop/midiReader/build/Debug/midiReader; sourceTree = "<absolute>"; };
+		07A0DE1A2226C3180025762D /* midiReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midiReader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		078EDE072223F6EF00B4EB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078EDE162223F87200B4EB48 /* CoreMIDI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		078EDE012223F6EF00B4EB48 = {
+			isa = PBXGroup;
+			children = (
+				078EDE0C2223F6EF00B4EB48 /* midiReader */,
+				078EDE142223F87200B4EB48 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		078EDE0C2223F6EF00B4EB48 /* midiReader */ = {
+			isa = PBXGroup;
+			children = (
+				078EDE45222441D700B4EB48 /* game_logic.cpp */,
+				078EDE44222428E800B4EB48 /* file.mid */,
+				078EDE322224270100B4EB48 /* Binasc.cpp */,
+				078EDE2F2224270100B4EB48 /* Binasc.h */,
+				078EDE302224270100B4EB48 /* MidiEvent.cpp */,
+				078EDE392224270100B4EB48 /* MidiEvent.h */,
+				078EDE352224270100B4EB48 /* MidiEventList.cpp */,
+				078EDE372224270100B4EB48 /* MidiEventList.h */,
+				078EDE2D2224270100B4EB48 /* MidiFile.cpp */,
+				078EDE332224270100B4EB48 /* MidiFile.h */,
+				078EDE2E2224270100B4EB48 /* MidiMessage.cpp */,
+				078EDE3A2224270100B4EB48 /* MidiMessage.h */,
+				078EDE342224270100B4EB48 /* Options.cpp */,
+				078EDE312224270100B4EB48 /* Options.h */,
+				078EDE362224270100B4EB48 /* README.md */,
+				078EDE382224270100B4EB48 /* twinkle.txt */,
+				07A0DE172225467C0025762D /* midiReader.cpp */,
+				07A0DE1A2226C3180025762D /* midiReader.h */,
+			);
+			path = midiReader;
+			sourceTree = "<group>";
+		};
+		078EDE142223F87200B4EB48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				078EDE152223F87200B4EB48 /* CoreMIDI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		078EDE092223F6EF00B4EB48 /* midiReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 078EDE112223F6EF00B4EB48 /* Build configuration list for PBXNativeTarget "midiReader" */;
+			buildPhases = (
+				078EDE062223F6EF00B4EB48 /* Sources */,
+				078EDE072223F6EF00B4EB48 /* Frameworks */,
+				078EDE082223F6EF00B4EB48 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = midiReader;
+			productName = midiReader;
+			productReference = 07A0DE192226C2BE0025762D /* midiReader */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		078EDE022223F6EF00B4EB48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Marwan Asker";
+				TargetAttributes = {
+					078EDE092223F6EF00B4EB48 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 078EDE052223F6EF00B4EB48 /* Build configuration list for PBXProject "midiReader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 078EDE012223F6EF00B4EB48;
+			productRefGroup = 078EDE012223F6EF00B4EB48;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				078EDE092223F6EF00B4EB48 /* midiReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		078EDE062223F6EF00B4EB48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078EDE3C2224270100B4EB48 /* MidiMessage.cpp in Sources */,
+				078EDE3B2224270100B4EB48 /* MidiFile.cpp in Sources */,
+				078EDE3F2224270100B4EB48 /* Options.cpp in Sources */,
+				078EDE3D2224270100B4EB48 /* MidiEvent.cpp in Sources */,
+				078EDE3E2224270100B4EB48 /* Binasc.cpp in Sources */,
+				07A0DE182225467C0025762D /* midiReader.cpp in Sources */,
+				078EDE46222441D700B4EB48 /* game_logic.cpp in Sources */,
+				078EDE402224270100B4EB48 /* MidiEventList.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		078EDE0F2223F6EF00B4EB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		078EDE102223F6EF00B4EB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		078EDE122223F6EF00B4EB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		078EDE132223F6EF00B4EB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		078EDE052223F6EF00B4EB48 /* Build configuration list for PBXProject "midiReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078EDE0F2223F6EF00B4EB48 /* Debug */,
+				078EDE102223F6EF00B4EB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		078EDE112223F6EF00B4EB48 /* Build configuration list for PBXNativeTarget "midiReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078EDE122223F6EF00B4EB48 /* Debug */,
+				078EDE132223F6EF00B4EB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 078EDE022223F6EF00B4EB48 /* Project object */;
+}
