@@ -14,7 +14,7 @@ struct MIDI_command {
 } ;
 
 // the MidiReader class. This class is the foundation behind reading a midi file. it will take in a fileName string and a int track.
-//the filename is... the filename, and the track is what part of the midiFile that should be played.
+//the filename is a string, and the track is what part of the midiFile that should be played.
 //Since we will be creating our own midifile later we can set int track_ = 0. the fileLenght gives the length of the midifile in amount of ticks.
 
 class MidiReader{

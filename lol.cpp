@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <ctime>
 #include <cmath>
 #include "midiReader.h"
@@ -26,11 +26,11 @@ int main() {
     
     //Styr hur off spelaren kan vara men ändå få poäng
     // const int DT_MARGIN = 15;
-  
-     //Arrayer som håller koll på vilka toner som spelas, vilka som borde spelas och vilka som är tillgängliga för bonus
-    bool playingNotes[102]= {0};
-    bool bonusNotes[102]= {0};
-    bool keyboardState[102]= {0};
+    
+    //Arrayer som håller koll på vilka toner som spelas, vilka som borde spelas och vilka som är tillgängliga för bonus
+    bool playingNotes[96]= { 0 };
+    bool bonusNotes[96]= { 0 };
+    bool keyboardState[96]= { 0 };
     
     //För att testa, gör en färdig array med "spelar-input"
     MIDI_command playerInput[length];
@@ -57,7 +57,7 @@ int main() {
     float timestamp = 0;
     int score = 0;
     
-    while (timestamp < 102) {
+    while (timestamp < 667) {
         //Räkna ut hur långt in i låten vi är
         elapsed_time = clock() - start_time;
         //Avrunda tiden till en timestamp, se rad 23
@@ -73,7 +73,7 @@ int main() {
                 toggle(playingNotes[key]);
                 last_file_printed++;
             }
-             //Kolla om det finns några nya bonusnoter som ska uppdateras
+            //Kolla om det finns några nya bonusnoter som ska uppdateras
             while (round(timestamp)-1 == bonusFile[last_bonus_printed].timestamp) {
                 int key = bonusFile[last_bonus_printed].key;
                 toggle(bonusNotes[key]);
@@ -118,3 +118,4 @@ int arrayMultiply(bool a[], bool b[]) {
     }
     return result;
 }
+*/
