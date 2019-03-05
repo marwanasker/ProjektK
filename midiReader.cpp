@@ -13,6 +13,12 @@ struct MIDI_command {
     int key; // note
 } ;
 
+struct MIDI_note {
+    int timestamp; // time
+    int key; // note
+    double duration;
+} ;
+
 // the MidiReader class. This class is the foundation behind reading a midi file. it will take in a fileName string and a int track.
 //the filename is a string, and the track is what part of the midiFile that should be played.
 //Since we will be creating our own midifile later we can set int track_ = 0. the fileLenght gives the length of the midifile in amount of ticks.
@@ -22,10 +28,11 @@ public:
     int fileLength = 0;
     MidiReader(string fileName, int track_);
     void getMidiCommands(MIDI_command commands[]); //this function returns the note and tick(midi_commands) of the midifile.
-
+    void getMidiDuration(MIDI_note notes[]);
 private:
     MidiFile midifile;
     int track;
+    
 };
 
 MidiReader:: MidiReader(string fileName, int track_){ //loaded constructor
@@ -40,5 +47,13 @@ void MidiReader:: getMidiCommands(MIDI_command commands[]){
     int idx = 0;
     for (int event=0; event<fileLength; event++) {
         commands[idx++] = {midifile[track][event].tick, (int)midifile[track][event][1]}; //get the ticks and the notes being played
+    }
+}
+
+void MidiReader:: getMidiDuration(MIDI_note notes[]){
+    for(int event =0; event < fileLength; event++){
+        notes[event].duration = midifile[track][event].getDurationInSeconds();
+        notes[event].timestamp = midifile[track][event].tick;
+        notes[event].key = (int)midifile[track][event][1];
     }
 }

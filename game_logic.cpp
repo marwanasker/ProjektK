@@ -14,6 +14,7 @@ int main() {
     int length = midireader.fileLength;
     MIDI_command commands[length];
     midireader.getMidiCommands(commands);
+    double randfile[midireader.fileLength];
     
     //Inställningar från midi-filen
     int bpm = 120;
@@ -57,7 +58,7 @@ int main() {
     float timestamp = 0;
     int score = 0;
     
-    while (timestamp < 102) {
+    while (timestamp < 320) {
         //Räkna ut hur långt in i låten vi är
         elapsed_time = clock() - start_time;
         //Avrunda tiden till en timestamp, se rad 23
@@ -99,7 +100,6 @@ int main() {
     }
     
     cout << "Your score is: " << score << endl;
-    
     return 0;
 }
 

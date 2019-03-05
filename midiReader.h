@@ -16,10 +16,17 @@ struct MIDI_command {
     int key;
 } ;
 
+struct MIDI_note {
+    int timestamp; // time
+    int key; // note
+    double duration;
+} ;
+
 class MidiReader{
 public:
 MidiReader(string fileName, int track_);
 void getMidiCommands(MIDI_command commands[]);
+void getMidiDuration(MIDI_note notes[]);
 int fileLength;
 };
 
