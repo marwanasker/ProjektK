@@ -37,7 +37,7 @@ MidiReader:: MidiReader(string fileName, int track_){ //loaded constructor
     fileLength = midifile[track].size(); //get size of the file
 }
 
-void MidiReader:: getMidiProperties(MIDI_properties properties[]){ //get the ticks, notes and duration in ticks of the current "bar" 
+void MidiReader:: getMidiProperties(MIDI_properties properties[]){ //get the ticks, notes and duration in ticks of the current "bar"
     int idx = 0;
     for (int event=0; event<fileLength; event++){
         properties[idx++] = {midifile[track][event].tick, (int)midifile[track][event][1], (int)midifile[track][event].getTickDuration()};
