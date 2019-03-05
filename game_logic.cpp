@@ -12,9 +12,9 @@ int main() {
     //Skapa en ny midireader och läs in filen i commands
     MidiReader midireader = MidiReader("file.mid", 1);
     int length = midireader.fileLength;
-    MIDI_command commands[length];
-    midireader.getMidiCommands(commands);
-    double randfile[midireader.fileLength];
+    MIDI_properties properties[length];
+   // MIDI_note notes[length];
+    midireader.getMidiProperties(properties);
     
     //Inställningar från midi-filen
     int bpm = 120;
@@ -34,14 +34,14 @@ int main() {
     bool keyboardState[102]= {0};
     
     //För att testa, gör en färdig array med "spelar-input"
-    MIDI_command playerInput[length];
-    MIDI_command midiFile[length];
+    MIDI_properties playerInput[length];
+    MIDI_properties midiFile[length];
     for(int i=0; i < length; i++) {
-        midiFile[i] = commands[i];
-        playerInput[i] = commands[i];
+        midiFile[i] = properties[i];
+        playerInput[i] = properties[i];
     }
     //En placeholder för när spelaren får bonus, ska bytas ut mot midi
-    MIDI_command bonusFile[4] = {{100, 1}, {110, 1}, {200, 2}, {210, 2}};
+    MIDI_properties bonusFile[4] = {{100, 1}, {110, 1}, {200, 2}, {210, 2}};
     
     
     //Tider som representerar när låten började och hur långt in vi är
@@ -58,7 +58,7 @@ int main() {
     float timestamp = 0;
     int score = 0;
     
-    while (timestamp < 320) {
+    while (timestamp < 100) {
         //Räkna ut hur långt in i låten vi är
         elapsed_time = clock() - start_time;
         //Avrunda tiden till en timestamp, se rad 23
@@ -69,20 +69,20 @@ int main() {
             last_timestamp++;
             
             //Kolla om det finns några nya kommandon i midifilen som ska uppdateras
-            while (round(timestamp)-1 == midiFile[last_file_printed].timestamp) {
-                int key = midiFile[last_file_printed].key;
+            while (round(timestamp)-1 == midiFile[last_file_printed].start) {
+                int key = midiFile[last_file_printed].note;
                 toggle(playingNotes[key]);
                 last_file_printed++;
             }
              //Kolla om det finns några nya bonusnoter som ska uppdateras
-            while (round(timestamp)-1 == bonusFile[last_bonus_printed].timestamp) {
-                int key = bonusFile[last_bonus_printed].key;
+            while (round(timestamp)-1 == bonusFile[last_bonus_printed].start) {
+                int key = bonusFile[last_bonus_printed].note;
                 toggle(bonusNotes[key]);
                 last_bonus_printed++;
             }
             //Kolla om det finns någon ny input från spelaren
-            while (round(timestamp)-1 == playerInput[last_input].timestamp) {
-                int key = playerInput[last_input].key;
+            while (round(timestamp)-1 == playerInput[last_input].start) {
+                int key = playerInput[last_input].note;
                 // Check bonus
                 if (bonusNotes[key]) {
                     score += 500;

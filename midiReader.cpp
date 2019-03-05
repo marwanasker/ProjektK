@@ -8,15 +8,10 @@ using namespace smf;
 
 // create a struct that will be loaded with the midi-commands that are essential for the compare function.
 //This will include the note that is being played and the tick (the precise time it's played).
-struct MIDI_command {
-    int timestamp; // time
-    int key; // note
-} ;
-
-struct MIDI_note {
-    int timestamp; // time
-    int key; // note
-    double duration;
+struct MIDI_properties {
+    int start;
+    int note;
+    int duration;
 } ;
 
 // the MidiReader class. This class is the foundation behind reading a midi file. it will take in a fileName string and a int track.
@@ -27,8 +22,7 @@ class MidiReader{
 public:
     int fileLength = 0;
     MidiReader(string fileName, int track_);
-    void getMidiCommands(MIDI_command commands[]); //this function returns the note and tick(midi_commands) of the midifile.
-    void getMidiDuration(MIDI_note notes[]);
+    void getMidiProperties(MIDI_properties properties[]); //this function returns the note and tick(midi_commands) of the midifile.
 private:
     MidiFile midifile;
     int track;
@@ -43,17 +37,9 @@ MidiReader:: MidiReader(string fileName, int track_){ //loaded constructor
     fileLength = midifile[track].size(); //get size of the file
 }
 
-void MidiReader:: getMidiCommands(MIDI_command commands[]){
+void MidiReader:: getMidiProperties(MIDI_properties properties[]){ //get the ticks, notes and duration in ticks of the current "bar" 
     int idx = 0;
-    for (int event=0; event<fileLength; event++) {
-        commands[idx++] = {midifile[track][event].tick, (int)midifile[track][event][1]}; //get the ticks and the notes being played
-    }
-}
-
-void MidiReader:: getMidiDuration(MIDI_note notes[]){
-    for(int event =0; event < fileLength; event++){
-        notes[event].duration = midifile[track][event].getDurationInSeconds();
-        notes[event].timestamp = midifile[track][event].tick;
-        notes[event].key = (int)midifile[track][event][1];
+    for (int event=0; event<fileLength; event++){
+        properties[idx++] = {midifile[track][event].tick, (int)midifile[track][event][1], (int)midifile[track][event].getTickDuration()};
     }
 }

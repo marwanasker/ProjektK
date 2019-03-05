@@ -11,22 +11,16 @@
 
 #endif /* midiReader_h */
 using namespace std;
-struct MIDI_command {
-    int timestamp;
-    int key;
-} ;
-
-struct MIDI_note {
-    int timestamp; // time
-    int key; // note
-    double duration;
+struct MIDI_properties {
+    int start; // time
+    int note; // note
+    int duration;
 } ;
 
 class MidiReader{
 public:
 MidiReader(string fileName, int track_);
-void getMidiCommands(MIDI_command commands[]);
-void getMidiDuration(MIDI_note notes[]);
+void getMidiProperties(MIDI_properties commands[]);
 int fileLength;
 };
 
