@@ -20,7 +20,7 @@ struct MIDI_properties {
 class MidiReader{
 public:
 MidiReader(string fileName, int track_);
-void getMidiProperties(MIDI_properties commands[]);
+void getMidiProperties(vector<MIDI_properties> &properties);
 int fileLength;
 };
 

@@ -22,7 +22,7 @@ class MidiReader{
 public:
     int fileLength = 0;
     MidiReader(string fileName, int track_);
-    void getMidiProperties(MIDI_properties properties[]); //this function returns the note and tick(midi_commands) of the midifile.
+    void getMidiProperties(vector<MIDI_properties> &properties); //this function returns the note and tick(midi_commands) of the midifile.
 private:
     MidiFile midifile;
     int track;
@@ -37,9 +37,9 @@ MidiReader:: MidiReader(string fileName, int track_){ //loaded constructor
     fileLength = midifile[track].size(); //get size of the file
 }
 
-void MidiReader:: getMidiProperties(MIDI_properties properties[]){ //get the ticks, notes and duration in ticks of the current "bar"
-    int idx = 0;
+void MidiReader:: getMidiProperties(vector<MIDI_properties> &properties){ //get the ticks, notes and duration in ticks of the current "bar"
     for (int event=0; event<fileLength; event++){
-        properties[idx++] = {midifile[track][event].tick, (int)midifile[track][event][1], (int)midifile[track][event].getTickDuration()};
+       // properties[event] = {midifile[track][event].tick, (int)midifile[track][event][1], (int)midifile[track][event].getTickDuration()};
+        properties[event].start = midifile[track][event].tick;
     }
 }

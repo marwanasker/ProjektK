@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cmath>
+#include <vector>
 #include "midiReader.h"
 
 using namespace std;
@@ -9,11 +10,10 @@ void toggle(bool &a);
 int arrayMultiply(bool a[], bool b[]);
 
 int main() {
+    
     //Skapa en ny midireader och läs in filen i commands
     MidiReader midireader = MidiReader("file.mid", 1);
-    int length = midireader.fileLength;
-    MIDI_properties properties[length];
-   // MIDI_note notes[length];
+    vector<MIDI_properties> properties(midireader.fileLength);
     midireader.getMidiProperties(properties);
     
     //Inställningar från midi-filen
@@ -29,17 +29,21 @@ int main() {
     // const int DT_MARGIN = 15;
   
      //Arrayer som håller koll på vilka toner som spelas, vilka som borde spelas och vilka som är tillgängliga för bonus
-    bool playingNotes[102]= {0};
-    bool bonusNotes[102]= {0};
-    bool keyboardState[102]= {0};
+    bool playingNotes[109]= {0};
+    bool bonusNotes[109]= {0};
+    bool keyboardState[109]= {0};
     
     //För att testa, gör en färdig array med "spelar-input"
-    MIDI_properties playerInput[length];
-    MIDI_properties midiFile[length];
-    for(int i=0; i < length; i++) {
-        midiFile[i] = properties[i];
+    vector<MIDI_properties> playerInput(properties.size());
+    vector<MIDI_properties> fileInput(properties.size());
+    //MIDI_properties playerInput[properties.size()];
+   // MIDI_properties midiFile[properties.size()];
+    
+   for(int i=0; i < properties.size(); i++) {
+        fileInput[i] = properties[i];
         playerInput[i] = properties[i];
     }
+    
     //En placeholder för när spelaren får bonus, ska bytas ut mot midi
     MIDI_properties bonusFile[4] = {{100, 1}, {110, 1}, {200, 2}, {210, 2}};
     
@@ -58,7 +62,7 @@ int main() {
     float timestamp = 0;
     int score = 0;
     
-    while (timestamp < 100) {
+    while (timestamp < 120) {
         //Räkna ut hur långt in i låten vi är
         elapsed_time = clock() - start_time;
         //Avrunda tiden till en timestamp, se rad 23
@@ -69,8 +73,8 @@ int main() {
             last_timestamp++;
             
             //Kolla om det finns några nya kommandon i midifilen som ska uppdateras
-            while (round(timestamp)-1 == midiFile[last_file_printed].start) {
-                int key = midiFile[last_file_printed].note;
+            while (round(timestamp)-1 == fileInput[last_file_printed].start) {
+                int key = fileInput[last_file_printed].note;
                 toggle(playingNotes[key]);
                 last_file_printed++;
             }
