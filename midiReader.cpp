@@ -23,6 +23,7 @@ public:
     int fileLength = 0;
     MidiReader(string fileName, int track_);
     void getMidiProperties(vector<MIDI_properties> &properties); //this function returns the note and tick(midi_commands) of the midifile.
+
 private:
     MidiFile midifile;
     int track;
@@ -34,7 +35,8 @@ MidiReader:: MidiReader(string fileName, int track_){ //loaded constructor
     midifile.doTimeAnalysis(); // analyse the ticks and time of the midifile
     midifile.linkNotePairs(); // analyse the notes being played
     track = track_;
-    fileLength = midifile[track].size(); //get size of the file
+	fileLength = midifile[track].size(); //get size of the file
+
 }
 
 void MidiReader:: getMidiProperties(vector<MIDI_properties> &properties){ //get the ticks, notes and duration in ticks of the current "bar"
